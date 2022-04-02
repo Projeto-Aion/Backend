@@ -13,28 +13,26 @@ import javax.validation.constraints.Size;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name="tb_temas")
+@Table(name="tb_postagens")
 public class postagem {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull
 	@UpdateTimestamp
 	private LocalDateTime data;
 	
-	@NotNull
 	@Size(max=255)
 	private String local;
 	
 	@Size(max=255)
 	private String anexo;
 	
-	@NotNull
 	@Size(max=150)
 	private String titulo;
 	
+	@NotNull
 	@Size(max=280)
 	private String descricao;
 
