@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AionApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AionApplication.class, args);//teste
-	}
+		SpringApplication.run(AionApplication.class, args);
 
+	}
 }

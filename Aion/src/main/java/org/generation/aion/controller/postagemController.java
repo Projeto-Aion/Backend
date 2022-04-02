@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/postagens")
-@CrossOrigin(origins="*", allowedHeaders = "*")
+@CrossOrigin(origins="*", allowedHeaders = "*") //ATENÇÃO
 public class postagemController {
 
 	@Autowired
@@ -65,8 +65,7 @@ public class postagemController {
 	
 	@PutMapping
 	public ResponseEntity<postagem> put (@RequestBody postagem postagem){
-		return ResponseEntity.status(HttpStatus.OK).
-				body(repository.save(postagem));
+		return ResponseEntity.status(HttpStatus.OK).body(repository.save(postagem));
 	}
 	
 	@DeleteMapping("/{id}")
