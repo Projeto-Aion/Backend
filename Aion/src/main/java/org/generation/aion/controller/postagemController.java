@@ -3,6 +3,8 @@ package org.generation.aion.controller;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.generation.aion.model.postagem;
 import org.generation.aion.repository.postagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,12 +61,12 @@ public class postagemController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<postagem> post (@RequestBody postagem postagem){
+	public ResponseEntity<postagem> post (@Valid @RequestBody postagem postagem){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(postagem));
 	}
 	
 	@PutMapping
-	public ResponseEntity<postagem> put (@RequestBody postagem postagem){
+	public ResponseEntity<postagem> put (@Valid @RequestBody postagem postagem){
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(postagem));
 	}
 	
