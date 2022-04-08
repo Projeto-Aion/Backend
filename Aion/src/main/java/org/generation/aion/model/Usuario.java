@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -22,14 +23,15 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotNull
 	private String nome;
-	
+
+	@Email
+	private String usuario;
+
 	private String nickname;
-	
-	@NotNull
-	private String email;
-	
+
+	private String foto;
+
 	@NotNull
 	@Size(min=8, max=255)
 	private String senha;
@@ -57,6 +59,14 @@ public class Usuario {
 		this.nome = nome;
 	}
 
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
 	public String getNickname() {
 		return nickname;
 	}
@@ -65,12 +75,12 @@ public class Usuario {
 		this.nickname = nickname;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getFoto() {
+		return foto;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	public String getSenha() {
@@ -96,6 +106,8 @@ public class Usuario {
 	public void setPostagem(List<postagem> postagem) {
 		this.postagem = postagem;
 	}
+
+	
 	
 	
 }
