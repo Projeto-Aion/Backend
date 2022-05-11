@@ -35,6 +35,8 @@ public class Usuario {
 	private String nickname;
 
 	private String foto;
+	
+	private String tipo;
 
 	@NotNull
 	@Size(min=8, max=255)
@@ -45,7 +47,7 @@ public class Usuario {
 	
 	@OneToMany(mappedBy="usuario", cascade=CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
-	private List<postagem>postagem;
+	private List<Postagem>postagem;
 
 	public Long getId() {
 		return id;
@@ -103,15 +105,20 @@ public class Usuario {
 		this.telefone = telefone;
 	}
 
-	public List<postagem> getPostagem() {
+	public List<Postagem> getPostagem() {
 		return postagem;
 	}
 
-	public void setPostagem(List<postagem> postagem) {
+	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
 
-	
-	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 	
 }

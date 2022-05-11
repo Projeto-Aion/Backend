@@ -1,6 +1,5 @@
 package org.generation.aion.repository;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.generation.aion.model.Usuario;
