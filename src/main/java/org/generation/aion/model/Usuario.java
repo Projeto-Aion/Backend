@@ -37,6 +37,7 @@ public class Usuario {
 	private String foto;
 	
 	private String tipo;
+	//tipo de usuario
 
 	@NotNull
 	@Size(min=8, max=255)
