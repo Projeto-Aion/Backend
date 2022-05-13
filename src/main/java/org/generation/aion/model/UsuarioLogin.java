@@ -14,8 +14,6 @@ public class UsuarioLogin {
 
     private String senha;
 
-    private String telefone;
-
     private String token;
     
     private String tipo;
@@ -66,14 +64,6 @@ public class UsuarioLogin {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
 	}
 
 	public String getToken() {

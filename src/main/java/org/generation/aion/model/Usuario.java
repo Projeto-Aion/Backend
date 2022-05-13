@@ -37,14 +37,11 @@ public class Usuario {
 	private String foto;
 	
 	private String tipo;
-	//tipo de usuario
 
 	@NotNull
 	@Size(min=8, max=255)
 	private String senha;
 	
-	@Size(max=14)
-	private String telefone;
 	
 	@OneToMany(mappedBy="usuario", cascade=CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
@@ -96,14 +93,6 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
 	}
 
 	public List<Postagem> getPostagem() {
