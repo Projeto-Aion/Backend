@@ -37,6 +37,8 @@ public class Usuario {
 	private String foto;
 	
 	private String tipo;
+	
+	private String imgfundo;
 
 	@NotNull
 	@Size(min=8, max=255)
@@ -109,6 +111,14 @@ public class Usuario {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+
+	public String getImgfundo() {
+		return imgfundo;
+	}
+
+	public void setImgfundo(String imgfundo) {
+		this.imgfundo = imgfundo;
 	}
 	
 }

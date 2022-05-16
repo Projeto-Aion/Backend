@@ -17,6 +17,8 @@ public class UsuarioLogin {
     private String token;
     
     private String tipo;
+    
+    private String imgfundo;
 
 	public Long getId() {
 		return id;
@@ -80,6 +82,14 @@ public class UsuarioLogin {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+
+	public String getImgfundo() {
+		return imgfundo;
+	}
+
+	public void setImgfundo(String imgfundo) {
+		this.imgfundo = imgfundo;
 	}
     
 }
