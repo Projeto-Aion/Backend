@@ -36,7 +36,7 @@ public class Postagem {
 	private String titulo;
 	
 	@NotNull
-	@Size(max=280)
+	@Size(max=2000)
 	private String descricao;
 	
 	@ManyToOne
