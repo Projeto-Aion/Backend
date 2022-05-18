@@ -5,8 +5,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.generation.aion.model.postagem;
-import org.generation.aion.repository.postagemRepository;
+import org.generation.aion.model.Postagem;
+import org.generation.aion.repository.PostagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,50 +23,50 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/postagens")
 @CrossOrigin(origins="*", allowedHeaders = "*") //ATENÇÃO
-public class postagemController {
+public class PostagemController {
 
 	@Autowired
-	private postagemRepository repository;
+	private PostagemRepository repository;
 	
 	@GetMapping
-	public ResponseEntity<List<postagem>> GetAll(){
+	public ResponseEntity<List<Postagem>> GetAll(){
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<postagem> GetById(@PathVariable Long id){
+	public ResponseEntity<Postagem> GetById(@PathVariable Long id){
 		return repository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
 	@GetMapping("/titulo/{titulo}")	
-	public ResponseEntity<List<postagem>> GetbyTitulo(@PathVariable String titulo){
+	public ResponseEntity<List<Postagem>> GetbyTitulo(@PathVariable String titulo){
 		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
 	}
 	
 	@GetMapping("/descricao/{descricao}")	
-	public ResponseEntity<List<postagem>> GetbyDescricao(@PathVariable String descricao){
+	public ResponseEntity<List<Postagem>> GetbyDescricao(@PathVariable String descricao){
 		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(descricao));
 	}
 	
 	@GetMapping("/local/{local}")	
-	public ResponseEntity<List<postagem>> GetbyLocal(@PathVariable String local){
+	public ResponseEntity<List<Postagem>> GetbyLocal(@PathVariable String local){
 		return ResponseEntity.ok(repository.findAllByLocalContainingIgnoreCase(local));
 	}
 	
 	@GetMapping("/data/{data}")	
-	public ResponseEntity<List<postagem>> GetbyData (@PathVariable LocalDateTime data){
+	public ResponseEntity<List<Postagem>> GetbyData (@PathVariable LocalDateTime data){
 		return ResponseEntity.ok(repository.findAllByData(data));
 	}
 	
 	@PostMapping
-	public ResponseEntity<postagem> post (@Valid @RequestBody postagem postagem){
+	public ResponseEntity<Postagem> post (@Valid @RequestBody Postagem postagem){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(postagem));
 	}
 	
 	@PutMapping
-	public ResponseEntity<postagem> put (@Valid @RequestBody postagem postagem){
+	public ResponseEntity<Postagem> put (@Valid @RequestBody Postagem postagem){
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(postagem));
 	}
 	

@@ -35,17 +35,19 @@ public class Usuario {
 	private String nickname;
 
 	private String foto;
+	
+	private String tipo;
+	
+	private String imgfundo;
 
 	@NotNull
 	@Size(min=8, max=255)
 	private String senha;
 	
-	@Size(max=14)
-	private String telefone;
 	
 	@OneToMany(mappedBy="usuario", cascade=CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
-	private List<postagem>postagem;
+	private List<Postagem>postagem;
 
 	public Long getId() {
 		return id;
@@ -95,23 +97,28 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-
-	public List<postagem> getPostagem() {
+	public List<Postagem> getPostagem() {
 		return postagem;
 	}
 
-	public void setPostagem(List<postagem> postagem) {
+	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
 
-	
-	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getImgfundo() {
+		return imgfundo;
+	}
+
+	public void setImgfundo(String imgfundo) {
+		this.imgfundo = imgfundo;
+	}
 	
 }

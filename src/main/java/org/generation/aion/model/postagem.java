@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="tb_postagens")
-public class postagem {
+public class Postagem {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,7 +36,7 @@ public class postagem {
 	private String titulo;
 	
 	@NotNull
-	@Size(max=280)
+	@Size(max=2000)
 	private String descricao;
 	
 	@ManyToOne
@@ -44,9 +44,9 @@ public class postagem {
 	private Usuario usuario;
 
 	@ManyToOne
-	@JsonIgnoreProperties
+	@JsonIgnoreProperties("postagem")
 	private Tema tema;
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -101,6 +101,14 @@ public class postagem {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+
+	public Tema getTema() {
+		return tema;
+	}
+
+	public void setTema(Tema tema) {
+		this.tema = tema;
 	}
 	
 }

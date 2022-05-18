@@ -14,9 +14,11 @@ public class UsuarioLogin {
 
     private String senha;
 
-    private String telefone;
-
     private String token;
+    
+    private String tipo;
+    
+    private String imgfundo;
 
 	public Long getId() {
 		return id;
@@ -66,14 +68,6 @@ public class UsuarioLogin {
 		this.senha = senha;
 	}
 
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-
 	public String getToken() {
 		return token;
 	}
@@ -81,8 +75,21 @@ public class UsuarioLogin {
 	public void setToken(String token) {
 		this.token = token;
 	}
-    
-    
-    
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getImgfundo() {
+		return imgfundo;
+	}
+
+	public void setImgfundo(String imgfundo) {
+		this.imgfundo = imgfundo;
+	}
     
 }

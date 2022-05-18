@@ -3,16 +3,17 @@ package org.generation.aion.repository;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import org.generation.aion.model.postagem;
+import org.generation.aion.model.Postagem;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface postagemRepository extends JpaRepository <postagem, Long> {
+public interface PostagemRepository extends JpaRepository <Postagem, Long> {
 	
-	public List<postagem> findAllByTituloContainingIgnoreCase (String titulo);
-	public List<postagem> findAllByDescricaoContainingIgnoreCase (String descricao);
-	public List<postagem> findAllByLocalContainingIgnoreCase (String local);
-	public List<postagem> findAllByData (LocalDateTime data);
+	public List<Postagem> findAllByTituloContainingIgnoreCase (@Param ("titulo") String titulo);
+	public List<Postagem> findAllByDescricaoContainingIgnoreCase (@Param ("descricao") String descricao);
+	public List<Postagem> findAllByLocalContainingIgnoreCase (@Param ("local") String local);
+	public List<Postagem> findAllByData (@Param ("data") LocalDateTime data);
 
 }

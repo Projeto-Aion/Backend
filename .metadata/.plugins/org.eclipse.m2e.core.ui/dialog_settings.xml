@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\GITHUB\ProjetoAion - Backend\Backend"/>
 			<item value="C:\Users\Rafael\Desktop\Projetos\Backend\Aion"/>
 		</list>
 		<list key="projectNameTemplate">

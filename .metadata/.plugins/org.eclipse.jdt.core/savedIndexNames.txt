@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+C:\Users\Lorrane\Documents\Generation Brasil\Projeto Anion\.metadata\.plugins\org.eclipse.jdt.core
-385884439.index
-1865797976.index
