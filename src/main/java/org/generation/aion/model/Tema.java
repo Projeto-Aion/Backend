@@ -21,7 +21,7 @@ public class Tema {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull
+	
 	private String categoria;
 	
 	@OneToMany(mappedBy="tema", cascade=CascadeType.ALL)
