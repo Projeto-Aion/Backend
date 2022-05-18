@@ -45,7 +45,6 @@ public class postagem {
 
 	@ManyToOne
 	@JsonIgnoreProperties
-	
 	private Tema tema;
 	
 	public Long getId() {
